@@ -1,0 +1,30 @@
+step 1 create p.json file
+npm init -y or npm init
+difference we can change the file once we created file
+
+step 2 install expressjs;
+npm i express
+
+step 3 install dotenv library
+npm i dotenv 
+or 
+npm i dotenv --save
+step 4 .env file and access data from it into index.js file
+step 5 create database with table in xampp
+step 6 install mysql 
+step 7 wrtre connection string in application
+step 8 make get request or query for getting users details
+step 9 make delete request for deleting single users
+step 10 body parser middle: it allows us to insert urlecoded and json data in post request 
+npm i body-parser
+step 11 npm i cors
+
+
+to start the api with xamp start in terminal with
+nodemon index.js
+
+
+axios: it is make to use request from react app to server database
+    it works on promises concept
+    to use it first we have to install it 
+    npm i axios

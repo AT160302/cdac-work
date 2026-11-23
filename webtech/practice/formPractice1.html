@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="task" placeholder="enter the text">
+</br>
+
+<button onclick="addtask()">Add</button>
+
+<ul id="list">
+
+</ul>
+
+<button onclick="clearform()">clear</button>
+
+<script>
+function addtask() {
+    let task= document.getElementById("task").value;
+    if (task==""){
+        alert("enter the task");
+    }
+
+    let newul= document.getElementById("list");
+    let newli= document.createElement("li");
+   
+    newli.innerHTML=`
+    ${task}
+    <button onClick="this.parentElement.remove()">delete</button>
+    `;
+
+    // newli.innerText=task;
+    
+
+    newul.appendChild(newli);
+    document.getElementById("task").value="";
+    
+}
+
+// function clear() {
+//     document.getElementById("task").value= "";
+//     document.getElementById("list").innerHTML= "";
+//     // document.createElement("li").innerText="";
+// }
+
+function clearform() {
+            document.getElementById("task").value = "";
+            document.getElementById("list").innerHTML = "";
+        }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+<!--  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="task" placeholder="Enter the task">
+    <br><br>
+
+    <button onclick="addtask()">Add</button>
+
+    <ul id="list">
+    </ul>
+
+    <button onclick="clearTasks()">Clear</button>
+
+    <script>
+        function addtask() {
+            let task = document.getElementById("task").value;
+
+            if (task.trim() == "") {
+                alert("Enter the task");
+                return;
+            }
+
+            let newul = document.getElementById("list");
+            let newli = document.createElement("li");
+
+            newli.innerHTML = `
+                ${task}
+                <button onclick="this.parentElement.remove()">Delete</button>
+            `;
+
+            newul.appendChild(newli);
+
+            document.getElementById("task").value = "";
+        }
+
+        function clearTasks() {
+            document.getElementById("task").value = "";
+            document.getElementById("list").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
+ -->

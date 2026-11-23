@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <img id ="1" src="./rose.jpg" alt="blue Rose" style= "width: 250px;">
+     <br><br>
+    <img src="./bluerose.jpg" alt="rose" style="width: 100px" onclick="change1()">
+    <img src="./images.webp" alt="image" style="width: 100px" onclick="change2()">
+    <button onclick="change()">change</button>
+</body>
+
+<script>
+    function change1() {
+        document.getElementById("1").src="./bluerose.jpg";
+        
+    }
+    function change2() {
+        document.getElementById("1").src="./images.webp";
+    }
+
+    let count=1;
+    function change() {
+       
+        if(count==1){
+             document.getElementById("1").src="./bluerose.jpg";
+             count=2;
+        }
+
+        else if (count==2){
+             document.getElementById("1").src="./images.webp";
+             count=3;
+        }
+        else{
+          document.getElementById("1").src="./rose.jpg";
+             count=1;  
+        }
+       
+    }
+</script>
+</html>

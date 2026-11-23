@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>temperature calculator</h2>
+    <input type="number" id="temp" placeholder="enter the temp">
+    <br>
+    <select id="conversion">
+        <option value="CtoF">Celsium to fahrehiate</option>
+        <option value="FtoC">Fahrehiate to celsi</option>
+    </select>
+
+     <button onclick="converttemp()">convert</button>
+    <div id ="result">
+   
+    </div>
+
+    <script>
+        function converttemp(){
+            let temp= Number(document.getElementById("temp").value);
+            let type= document.getElementById("conversion").value;
+            let result;
+            if(type== "CtoF") {
+                result = (temp * 9/5) +32;
+                document.getElementById("result").innerText=temp+ "Celsium: " +result.toFixed(2) + "F";
+            }
+            else {
+                result = (temp - 32) *5/9;
+                document.getElementById("result").innerText=temp+ "F: " +result.toFixed(2) + "C";
+            }
+
+            
+
+        }
+    </script>
+
+
+</body>
+</html>

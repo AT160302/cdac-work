@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id ="1" src="./image/rose.jpg" alt="blue Rose">
+    <!-- <img id ="2" src="C:\Users\Aqsa\OneDrive\Desktop\cdac\webtech\practice\image\rose.jpg" alt="rose">
+    <img src="C:\Users\Aqsa\OneDrive\Desktop\cdac\webtech\practice\image\images.webp" alt="image"> -->
+    <button onclick="change()">change</button>
+</body>
+<script>
+    let count=1;
+    function change() {
+        
+        
+        
+        if(count==1) {
+            document.getElementById("1").src="./image/rose.jpg";
+            count=2;
+        }
+        else if (count==2) {
+            document.getElementById("1").src="./image/bluerose.jpg";
+            count=3;
+        }
+
+        else 
+        {
+            document.getElementById("1").src="./image/images.webp";
+            count=1;
+
+        }
+    }
+</script>
+
+</html>

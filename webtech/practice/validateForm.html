@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id ="validateForm"> -->
+    <input type="text" id="username" placeholder="enter username"> 
+    <br>
+    <input type="password" id="password" placeholder="enter password">
+    <br>
+    
+    <br>
+    <input type="password" id="confirmPassword" placeholder="enter the same password">
+    <br>
+    <input type="number" id="age" placeholder="enter your age">
+    <br>
+    <button onclick="submit()">submit</button>
+
+
+    <!-- </div> -->
+</body>
+<script>
+    function submit() {
+        // let validateForm= document.getElementById("validateForm").value;
+        let username= document.getElementById("username").value;
+        // if(validateForm==false) {
+        if(username.length<5) {
+            alert("Username should contain minimum 5 letters");
+            return;
+        }
+        
+        let password = document.getElementById("password").value;
+        if( !/[0-9]/.test(password) || !/[!@#$%^&*()]/.test(password)) {
+            alert("password should contain number and specific character")
+            return;
+        }
+
+        let confirmPassword = document.getElementById("confirmPassword").value;
+        if( password!=confirmPassword) {
+            alert("password should be same")
+            return;
+        }
+
+        let age = document.getElementById("age").value;
+        if(age<18 || age>30) {
+            //  !/[0-18].test(age)/   
+            alert("age should be between 18 and 30")
+            return;
+        }
+    // }
+    // if(validateForm==true) {
+        alert("Form is Submitted")
+        // document.getElementById("validateForm").value="";
+        document.getElementById("username").value=""
+        document.getElementById("password").value=""
+        document.getElementById("confirmPassword").value=""
+        document.getElementById("age").value=""
+    // }
+        
+    }
+
+        // alert("Form is Submitted")
+        // document.getElementById("validateForm").value="";
+        // document.getElementById("username").value=""
+        // document.getElementById("password").value=""
+        // document.getElementById("confirmPassword").value=""
+
+
+    
+</script>
+</html>

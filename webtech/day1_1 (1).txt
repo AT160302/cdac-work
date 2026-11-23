@@ -1,0 +1,700 @@
+Database
+collection of tables
+collection of related information 
+collection of structured and non structured data
+
+
+				Database
+				  |
+		----------------------------------------------
+		|					|
+		structured			 non structured
+		data				data
+		|					|
+		RDBMS					NOSQL
+		|					|
+relational database management system 			not only sql
+		|					|
+MySQL , oracle, sql server, PostgreSQL		mongodb, Cassandra, neo4j ...
+Sybase... 
+		|					|
+	70 tables					30 tables
+
+
+1. lnt
+2. bank
+..
+
+table
+collection of rows
+
+dept
+deptno	dname 	loc
+10	acct	mum  		--> row / tuple
+20	fin	bang
+30	mkt	hyd
+40	sales	pune
+
+deptno	dname 	loc --> COLS / fields / attributes
+
+--lnt database  : 100 tables
+dept			40 rows
+deptno
+dname 
+loc
+
+employee		300000 rows
+empid
+fname
+lname
+mname
+mobile
+address
+pan 
+email
+adhar
+passport
+
+
+
+client		56000 rows
+id
+name 
+address
+mobile
+profession
+
+project			50000 rows
+proj_id
+name 
+stdate
+enddate
+no_team
+tech
+budget
+
+
+attendance		6709800 rows
+empid
+month
+no_prest
+no_abs
+reason
+
+
+salary		786000 rows
+empid
+month
+basic
+da
+hra
+bonus
+commission
+tds
+
+
+
+loan	60000 rows
+loan_id
+empid
+type
+loan_amt
+emi
+int_rate
+duration
+payment_date
+charges
+remark
+
+
+travel		898000rows
+id
+empid
+stpt
+endpt
+km
+stdate
+enddate
+charges
+
+
+emp_project  78755000 rows
+id
+empid
+proj_id
+stdate
+enddate
+duration
+role
+
+=====================
+client server architecture / distributed architecture
+eg : what's up, facebook, amazon , flipcart, icicibank 
+eg gmail 
+inbox	: 200 emails 
+sent
+10 ..
+..
+			server  : 100 tables  : data
+			  |
+		------------------------------------
+		|		|		|
+		client1		client2		client3 ..
+
+--master table 
+the dml (insert , update, delete) operations are very rare
+eg : dept , account_holder_table , flight_schedule  , 
+
+dept		
+deptno	dname 	loc
+10	acct	mum  		
+20	fin	bang
+30	mkt	hyd
+40	sales	pune
+
+
+--transaction table 
+the dml (insert , update, delete) operations are very frequently done
+eg : bank_transaction_table , passanger_booking
+emp_proj
+
+sql : Structured query language
+
+
+--relationships
+one to one
+	emp	passport
+one to many
+	eg :	college	-- student
+		dept --emp
+many to many
+	eg : there will be many colleges and there will be many students
+
+--DBMS  Database management system 
+	manages the table / data
+eg : clipper , FoxPro, foxbase
+
+--functions of DBMS 
+1 Adding the data is fast
+2 update the data is fast
+3 deleting the data is fast
+4 retrieving the data is fast
+
+--adv of DBMS 
+1 Primary key, unique key is present
+2 DBA( database administrator) role is present
+
+--DBA functions
+1 add users
+2 drop user
+3 change password of users 
+4 memory management
+5 check the performance of db 
+
+Ankita		richa	Aqsa
+2mb		3mb	4mb
+
+--disadv of DBMS 
+1. no foreign key
+2 we can not create a relationship between the tables
+3 the data is repeated everywhere
+4 memory requirement is high
+5 speed is low
+
+emp	100 rows
+empid --pk
+ename
+address
+mobile
+
+attend
+id	pk
+empid 
+ename
+address
+mobile
+month
+no_pre
+no_abs
+remark
+======================================================
+---RDBMS
+relational database management system 
+eg : oracle , MySQL, sql server, Sybase, PostgreSQL, ingress, infomax, ms access 
+
+--adv of RDBMS 
+1.foreign key
+2 we can create a relationship between the tables
+3 the data is not repeated 
+4 memory requirement is low
+5 speed is high
+
+=================
+different keys
+1 primary key / super key / natural key
+2 unique key
+3 foreign key
+4 candidate key
+5 alternate key
+6 composite key
+
+--primary key 
+it is an identity of the row
+it is unique and can not be null
+eg : emp ---> empno
+dept --> deptno
+student --> rollno
+
+emp
+empno	ename 		sal 		deptno
+1	priti		50000		10
+null	uma		55000		10
+3	rohan		50000		null
+
+what is null?
+unknown value
+empty value
+missing value
+
+
+
+dept		
+deptno	dname 	loc
+10	acct	mum  		
+20	fin	bang
+30	mkt	hyd
+40	sales	pune
+
+
+
+==
+candidate key 
+these are the  columns where the data is not repeated and is not null
+eg deptno, dname , loc
+
+dept
+deptno 		dname 		loc
+10		acct		mum
+20		fin		hyd
+30		mkt		bang
+40		sales		pune
+==============
+if there are 3 ck, 1 will be pk , other 2 cols are ak 
+deptno  : pk  
+dname 	: ak  
+loc	: ak 
+=========
+composite key
+it is a pk consisting of 2 or more columns
+pk = empno + stdate
+empleave
+empno	stdate	   	enddate
+1	2025-11-10	2025-11-10
+2	2025-11-10	2025-11-10
+1	2025-12-30	2025-12-31
+1	.	2026-1-10
+
+=========================
+session : client machine
+	eg : accessing gmail account
+
+instance : server machine
+=========================
+different languages
+1 DDL (data definition language)
+	create, alter, drop , truncate
+2 DML (data manipulation language)
+	insert, update , delete
+3 DQL  (data query language)
+	select
+4 DCL  (data control language)
+	grant , revoke
+5 TCL (transaction control language)
+	commit, rollback, savepoint
+==================
+create: to create table 
+alter: to add a column, drop a column
+drop : will delete all the rows along with the structure
+truncate : will delete all the rows, but structure will be present
+insert: to add a new row
+update : to update the mobile number or address
+delete : to delete the row
+select : to retrieve the rows
+grant : to grant the privileges to other user
+revoke : to take back the privileges
+commit: to save the changes permanently to server
+rollback: to undo the changes
+savepoint : to create the bookmark
+======================
+types of users
+1 super user / dba / root user
+	username : root
+	pass: root
+2 normal user : 
+	user name : priti
+	pass : priti123
+===========
+pass : ycpait
+====
+-------------
+--time :  3 hr 
+1 communication  :  30 min
+2 aptitude   : 1.0 hr
+	eng / verbal
+	qualitative
+	math
+	logical reasoning 
+
+3 dsa	: 1.5 hr
+	array --->
+	stack
+	queue
+	sorting : bubble sort, quick sort,
+	hash map
+	travelsal
+	graph
+	searching 
+	tree : binary
+	link list
+	string---> qu
+	pattern matching 	
+
+4 tech : 30 min
+	java : core java , spring boot, hibernate , servlet : jdbc, microservices
+	database : 
+	web tech : html, css, nodejs, reactjs , javascript, typescript , jquery 
+	.net : c#, asp.net , ado.net 	
+=======
+--commands
+prompt 
+	MySQL
+
+--to break 
+ctrl + c
+
+--to clear screen
+system cls
+
+--to see all the databases
+show databases;
+
+--to create database
+create database cdac;
+
+--open databases
+use cdac;
+
+--to see the current database
+select database();
+
+--to drop database
+drop database cdac;
+
+--to see all tables
+show tables;
+
+--to see the current user
+select user();
+
+--to see the date 
+select current_date();
+2026-08-25
+yyyy-mm-dd
+
+--to see the date
+select curdate();
+
+--time
+select current_time();
+select curtime();
+
+
+
+--to create table
+create table dept(
+deptno int,
+dname varchar(20),		
+loc varchar(20));	
+
+insert into dept values(10, 'acct', 'mumbai');
+insert into dept values(20, 'fin', 'bang');
+insert into dept values(30, 'adm', 'hyd');
+insert into dept values(40, 'sales', 'pune');
+
+select * from dept;
+
+deptno 	dname 	loc
+10	acct	mum
+20	fin	bang
+30	adm	hyd
+40	sales	pune
+
+
+create table student(
+rollno int,
+name varchar(20),
+address varchar(20),
+score int);
+
+--insert 4 rows 
+insert into student values(1, 'paras', 'mum', 90);
+insert into student values(1, 'paras', 'mum', 90);
+select * from student;
+
+--
+drop table student;
+
+create table student(
+rollno int primary key,
+name varchar(20),
+address varchar(20),
+score int);
+
+insert into student values(1, 'paras', 'mum', 90);
+insert into student values(2, 'priti', 'mum', 95);
+insert into student values(null, 'paras', 'mum', 90);
+
+--dml
+--change the name to "vikas" for rollno 1
+update student 
+set name ='vikas' 
+where rollno=1;
+
+--
+select * from student
+
+--change the address to "banglore" for vikas
+update student
+set address ='banglore'
+where name ='vikas';
+
+--change the address to "hydrabad" for rollno 2
+update student 
+set address ='hydrabad'
+where rollno=2;
+
+===delete row for name vikas
+delete from student
+where name ='vikas';
+
+delete from student
+where rollno=2;
+
+==will update all the rows
+update student 
+set address ='hydrabad';
+
+== will delete all rows
+delete from student;
+
+--note 
+if "where" is not written will delete all the rows
+
+--diff in drop and delete
+drop : ddl  command
+delete : dml command
+
+drop : "where" can not be given
+delete : where can be given
+
+drop : will delete all the rows with the structure of table 
+delete :will delete the rows.
+
+drop : "rollback" can not be given
+delete : "rollback" can be given
+
+===to see structure of tables
+desc student;
+
+--
+ update student
+ set name ='priti'
+ where rollno=1;
+
+--to exit
+exit
+or
+quit
+or
+\q
+
+
+--new session
+ show databases;
+ use cdac;
+show tables;
+select * from dept;
+select * from student;
+
+--to see help
+help
+or
+\h
+
+--note 
+all the ddl (create, alter, drop, truncate)commands are auto commit
+so these do not require the commit command to be given 
+
+Q __dml_ commands require commit to be given 
+a ddl
+b dml
+c dql
+d dcl
+
+Q __ddl_ commands do not require commit to be given 
+a ddl
+b dml
+c dql
+d dcl
+
+--
+
+--diff in truncate and delete
+truncate : ddl
+delete : dml
+
+truncate : "where" can not be given
+delete :"where" can be given
+
+truncate : "rollback" can not be given 
+delete :"rollback" can be given 
+
+==========================
+--diff in truncate and drop
+truncate : will delete all the rows but the structure is preserved
+drop :  will delete all the rows along with the structure 
+
+--comments
+#single line sldfksdlkflsdkflsdkf
+
+/*sdfsdf
+sdfsdf
+sdf
+sdf */ 
+
+--to see the version 
+select version();
+
+--command terminator / delimiter 
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--not null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,190 @@
+React 
+it is a javascript library
+which is mainly use for creating rich user interface
+it craete single page application (SPA)
+it works on component basis
+react develeoped and maintain by meta(facebook).
+latest version of react is react-18
+
+3 ways to create react project
+
+check first nodejs is installed already is not 
+to check nodejs we check in terminal 
+nodejs -v
+1. by using npm : need to install configuration file first
+   npm install -g create-react-app
+   create-react-app projectName
+   cd projectName
+   npm start
+2. by using npx : no need to install configuration file 
+   npx create-react-app projectName
+   cd projectName
+   npm start
+3. by using vite : it create react project with minimum required
+
+how to get output of react object
+first we have to write npm start command then it will display react project output on browser with localhost: 3000 port number.
+
+localserver is provided by nodejs
+
+- we can check the same react browser in our phone we just have to write local and on your network address but the wifi should be connected through one wifi network
+once we started the react
+
+node_module is use so if we install any third party module in our project it is installed in node_module (it is stored in node_module)
+package.json purpose is:
+dependencies and dev dependencies we get from package.json file
+dependent mean- their are some library to run the program 
+dev dependencies- when we are adding extrenally library while we are creating the project
+also for sharing our project we never shared node_modules but the size is too big
+
+npm i command we fire as dont have node_module when we received any project of react
+
+Q--- node-module bs react me hota ya koi aur application
+
+package-lock.json has detail information of all library example licenses route what are it required
+we dont make changes in package.json and package -locck,json
+readme.md: it is only to read like a guide book
+
+folder structure
+node_modules: all dependency and dev- dependencies install in this folder
+package.json: all dependedncy and dev- dependency enetry will found here
+package-lock.json : it contain detail description of dependency and dev-dependency
+
+gitignore :isme wo folders hote jo hume git respository me add nhi krte 
+
+public: fevicon logo hai
+index.html ek hi page hota
+
+public: it contain static files and index, html file
+src: in this folder we write development code.
+
+component in react- it is partial part of react project
+            it can be reuse multiple time
+note- in react project app.js if root component
+
+in react there are 2 types of component
+1. function component: whene our main focus is on UI design
+2. class component: whe we need to write complex logic
+
+always start file name of component with capital letter
+
+class never return the data, data inside the class with having method or function that return dat
+
+JSV (javasxcript and xml)
+it makes react code easy
+it allows user to write html code in recat component
+it jsx we have to use one parent element to wrap multiple child element
+
+*props (properties): 
+it is parameter or function parameter which is use to pass data inside component
+it return us object type of data
+in function component we can access props by writing properties
+propertyname
+in class component we can access
+
+
+*method and event in react
+*state in class component
+state: 
+it is use to handle essential data in class component
+it return object of type of data 
+to access state prop we write this.state.property in class component
+after react version 16 we can use state in function component by using usestate hook 
+
+in class component if you want to change state data for this.setState() methid we use 
+
+
+assignment
+
+Rendering: display component output or view on browser
+*conditional rendering : display component output or view conditionally
+1. if else: if condition is then if block will execute otherwise else condition
+2. element as variable: in this we store result in variable and display it inside element
+3. use of teranary operator: it is shorthand syntax of if else
+4. use of short-circuit(&&) : if the condition is true then an only display output or view, it is basically use for null checking
+
+
+PureComp ccc
+UseMemoComp function compo
+
+
+*PureComp: it is use to  prevent uncessary  redendering of class component when some data comes as props in class component 
+to achieve this we have to extend class with Purecomponent class
+
+*React.memo() : it is use to  prevent uncessary  redendering of function component when some data comes as props in function component 
+to achieve this we have to pass function component name as argument to react.memo method.
+
+virtual dom----important
+-in react instead of manipulating browser dom directly react creates virtual dom in its memory, where it does all the necessary changes before making browser dom
+in react virtual dom changes only what needs to be change 
+in react we give id attribute to each and every element while creating it, it helps virtual dom to identify it correctly 
+
+class comp -MylistComp
+
+how to use react bootstrap bootstrap
+step1: install bootstrap and react-bootstrap
+npm install react-bootstrap bootstrap
+step 2: import it in index.js file
+after that add index.js
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+step3: create function compo of MyCaroselComp
+
+
+folder structure
+
+* How to Hooks in React
+- in react Hooks allows us to class component feature in function component.
+- before using hooks in react first we havr o import it.
+
+* Rules to use hooks 
+- React hooks only works with function component not in class.
+-in raect hooks can be reader conditionally.
+- in react hooks always write at top level component.
+
+* List of Books :
+1.useState Hooks
+2.useEffect hook
+3.useref hook
+4.useContext hook
+5.useReducer hook
+6.useCallback Hook
+7.usememo hook
+8.custome hook.
+
+1.useState Hook :
+   - if u want to use state in function component for this we use unsafe Hook
+   - it returns takes two parameter 1.currentState,2.function to update state
+   syntax : const [currentState,functionToupdateState] = useState(values);
+
+2.useEffectHook :
+   - useEffect is use to perform sideeffect in function component.
+   - useEffect means fetching data from server, DOM,manipulation and use of timers function.
+   - useEffect hook execute immediately after component server.
+   - useEffect hook can perform component 
+   - it takes two parameter 1. callback function, 2.dependency
+   syntax : useEffect(()=>{},dependedncy)
+
+
+
+
+
+
+
+
+
+
+
+
+   routing
+   navigating to component
+   to perform routing in react - router dom library
+   to perform routing we use createBrowserRouter and Routeprovider module from react- router-dom librarry
+   1. createBrowserRouter- it allows us creating routing component
+
+   Routeprovider - it helps display routing component output(view) on browser
+   createBrowserRouter - is method take argument array of object type
+
+
+   routing types: 
+   1. Naming routing : display component`

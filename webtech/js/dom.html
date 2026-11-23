@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent1">
+        <p id="child1">
+            child1
+        </p>
+        <p id="child2">child2</p>
+    </div>
+    <hr>
+    <div id="parentcontent">
+        <h2 id="content">
+            1
+        </h2>
+        <h3 id="text">2</h3>
+        <h2 id="content2">3</h2>
+
+    </div>
+
+
+    <hr>
+
+    <form action="">
+        <label for ="1">    
+        //label is use bcz when we click on the name
+            <input type="radio" value="example1" name = "select" id="1">example1
+        </label>
+        <label for ="2">
+            <input type="radio" value="example2" name = "select" id= "2">example2
+            <!-- here when we want to select 1 from 2 option we use same name under that two options -->
+        </label>
+        
+        
+    </form>
+
+    <script>
+        // let parent = document.getElementById("parent1")
+        // console.log(parent1)
+        // //dynamically creating the element using js
+        // let para= document.createElement("p")
+        // //assigning the attribute
+        // para.setAttribute("id","child3")
+
+        // //assign the data to element
+        // para.innerHTML= "child3 I have created"
+        // //adding new element into parent element
+        // parent1.appendChild(para);
+////==================================================================
+        let contents = document.getElementById("parentcontent")
+        console.log(contents)
+
+        let header2= document.createElement("h2")
+        //adding attribute
+        header2.setAttribute("id","hh1")
+//===
+        header2.innerHTML= "header2 created y me"
+        contents.appendChild(header2);
+
+
+        // -----------
+        // <hr>
+
+        let content2= document.getElementById("parentcontent")
+        console.log(content2)
+
+        let elementcreate= document.createElement("h3")
+        elementcreate.setAttribute("id","aqsa")
+
+        elementcreate.innerHTML= "3rd header is created"
+        content2.appendChild(elementcreate);
+
+
+    </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./bluerose.jpg" style="width: 200px; border-radius: 50%;"  alt="bluerose" id="image">
+    <button onclick="previousImage()", style="border-radius: 20%; background-color: rgb(211, 228, 55); font-size: 30px; padding: 20px">previous image</button>
+    <button onclick="nextImage()", style="border-radius: 20%; background-color: rgb(152, 16, 16); font-size: 30px; padding: 20px; margin: 0px 0px 0px 0px;">next image</button>
+</body>
+<!-- <img src="./rose.jpg" alt=""> -->
+<script>
+    let image= [
+        "./images.webp",
+        "./rose.jpg"
+        ]
+
+    let index=0;
+
+    function previousImage() {
+        index--;
+        if(index<0) {
+        index=0;
+        }
+        document.getElementById("image").src=image[index];
+    }
+
+    function nextImage() {
+        index++;
+        if(index>=image.length) {
+            index=0;
+        }
+        document.getElementById("image").src=image[index];
+    }
+</script>
+</html>

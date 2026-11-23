@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent"> 
+        <p id= "child 1">chill 1</p>
+   
+        <p id = "grandchild"> family</p>
+    </div>
+
+    <div>
+        <ul id="parentUl">
+            <li>apple</li>
+            <li>mango</li>
+
+        </ul>
+
+        <ol>
+            <li> roll no 1</li>
+            <li> roll no 2</li>            
+            <li> roll no 3</li>            
+
+        </ol>
+
+
+    </div>
+
+    <div>
+
+
+        <table>
+            <thead>
+                <tr>
+
+               
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Post</th>
+                    <th>Salary</th>
+
+                 </tr>
+            </thead>
+
+            <tbody id="parenttable">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+       let emp=[
+            {id: 1,name:"Aqsa", post: "IT", salary: 150000},
+            {id: 2,name:"Aman", post: "Computer", salary: 50000},
+            {id: 3,name:"Humaira", post: "Medical", salary: 100000},
+            {id: 4,name:"zulfeen", post: "MBBS", salary: 450000}
+              
+        ]
+
+        // let parentbody= document.getElementById("parenttable");
+        // for(let i= 0; i<emp.length; i++) {
+        //     let newtr= document.createElement("tr");
+        //     newtr.innerHTML=`<td>${emp[i].id}</td>
+        //     <td> ${emp[i].name}</td>
+        //     <td> ${emp[i].post}</td>
+        //     <td> ${emp[i].salary}</td>`;
+            
+        //     parentbody.appendChild(newtr);
+        // }
+
+
+         let parentbody= document.getElementById("parenttable");
+        for(let a of emp) {
+            let newtr= document.createElement("tr");
+
+            let newtd1= document.createElement("td");
+            newtd1.innerText=a.id;
+
+            let newtd2= document.createElement("td");
+            newtd2.innerText=a.name;
+
+            let newtd3= document.createElement("td");
+            newtd3.innerText=a.post;
+
+            let newtd4= document.createElement("td");
+            newtd4.innerText=a.salary;
+
+            newtr.appendChild(newtd1);
+            newtr.appendChild(newtd2);
+            newtr.appendChild(newtd3);
+            newtr.appendChild(newtd4);
+            parentbody.appendChild(newtr);
+
+
+        }
+
+    // let parentelement= document.getElementById("parent"); 
+    // console.log(parentelement)
+    // let newpara= document.createElement("p");
+
+    // newpara.setAttribute("id", "child 2");
+    // newpara.innerText= "child 2 created";
+    // parentelement.appendChild(newpara);
+
+   
+
+    
+    let grandparent= document.getElementById("parent");
+    console.log("grandparent");
+    let newdiv= document.createElement("div");
+    newdiv.setAttribute("id","grandchild1");
+    newdiv.innerText="grandchild1 is created";
+
+    grandparent.appendChild(newdiv);
+
+
+
+// let parentUl= document.getElementById("parentUl");
+// console.log(parentUl);
+// let newUl= document.createElement("li");
+// newUl.innerText= "chiku";
+// parentUl.appendChild(newUl);
+
+
+    let parentUl= document.getElementById("parentUl");
+
+    let arr=["chinku","cherry"];
+    for(let i=0;i<arr.length;i++) {
+        let newUl= document.createElement("li");
+        newUl.innerText= arr[i];
+        parentUl.appendChild(newUl);
+    }
+
+
+    
+    </script>
+  
+
+</body>
+</html>

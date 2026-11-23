@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>temporary address</h2>
+    <textarea  id="temp" placeholder="Enter your address"></textarea>
+<br>
+    <button onclick= "saveadd()">save address as permenent</button>
+    <br>
+    <textarea id="permenentadd"></textarea>
+
+<script>
+    function saveadd() {
+        let temp= document.getElementById("temp").value;
+       document.getElementById("permenentadd").value=temp;
+    }
+</script>
+
+</body>
+</html>
